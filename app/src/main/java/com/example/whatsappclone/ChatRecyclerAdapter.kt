@@ -50,3 +50,87 @@ class ChatRecyclerAdapter(
         }
     }
 }
+class StatusRecyclerAdapter(
+    private val item: List<Status>
+) : RecyclerView.Adapter<StatusRecyclerAdapter.ViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val itemView = LayoutInflater
+            .from(parent.context)
+            .inflate(R.layout.item_chat, parent, false)
+        return ViewHolder(itemView)
+    }
+
+    override fun getItemCount(): Int {
+        return item.size
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(item[position])
+    }
+
+    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+
+        lateinit var nameTextView: TextView
+        lateinit var msgTextView: TextView
+        lateinit var avatarView: AppCompatImageView
+        lateinit var dateTextView: TextView
+
+        fun bind(item: Status){
+            nameTextView = itemView.findViewById(R.id.nameTextView)
+            msgTextView = itemView.findViewById(R.id.msgTextView)
+            avatarView = itemView.findViewById(R.id.avatarView)
+            dateTextView = itemView.findViewById(R.id.dateTextView)
+
+            nameTextView.text = item.name
+            msgTextView.text = item.demoText
+            dateTextView.text = item.date
+
+            avatarView.setImageDrawable(
+                ContextCompat.getDrawable(itemView.context, item.avatar)
+            )
+        }
+    }
+}
+class CallsRecyclerAdapter(
+    private val item: List<Calls>
+) : RecyclerView.Adapter<CallsRecyclerAdapter.ViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val itemView = LayoutInflater
+            .from(parent.context)
+            .inflate(R.layout.item_chat, parent, false)
+        return ViewHolder(itemView)
+    }
+
+    override fun getItemCount(): Int {
+        return item.size
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(item[position])
+    }
+
+    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+
+        lateinit var nameTextView: TextView
+        lateinit var msgTextView: TextView
+        lateinit var avatarView: AppCompatImageView
+        lateinit var dateTextView: TextView
+
+        fun bind(item: Calls){
+            nameTextView = itemView.findViewById(R.id.nameTextView)
+            msgTextView = itemView.findViewById(R.id.msgTextView)
+            avatarView = itemView.findViewById(R.id.avatarView)
+            dateTextView = itemView.findViewById(R.id.dateTextView)
+
+            nameTextView.text = item.name
+            msgTextView.text = item.demoText
+            dateTextView.text = item.date
+
+            avatarView.setImageDrawable(
+                ContextCompat.getDrawable(itemView.context, item.avatar)
+            )
+        }
+    }
+}

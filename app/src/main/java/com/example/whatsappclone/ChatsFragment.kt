@@ -18,36 +18,39 @@ class ChatsFragment: Fragment(R.layout.fragment_chats) {
     }
 
     private fun getChatSampleData() = mutableListOf<Chats>().apply {
-        (0..20).forEach {index ->
-            if(index%2 == 0) {
-                add(
-                    Chats(
-                        name = "Ansar",
-                        demoText = "Hello everyone!!!",
-                        avatar = R.drawable.ic_person,
-                        date = "02.02.2023"
-                    )
-                )
-            } else if(index%3 == 0){
-                add(
-                    Chats(
-                        name = "Kaira",
-                        demoText = "Ans Ans!!!",
-                        avatar = R.drawable.ic_default,
-                        date = "02.02.2023"
-                    )
-                )
-            } else{
-                add(
-                    Chats(
-                        name = "Zhasik",
-                        demoText = "Ya chert!!!",
-                        avatar = R.drawable.ic_default,
-                        date = "02.02.2023"
-                    )
-                )
-            }
-        }
+
+        add(
+            Chats(
+                name = "База",
+                demoText = "всем привет!!!",
+                avatar = R.drawable.ic_person,
+                date = "02.02.2023"
+            )
+        )
+        add(
+            Chats(
+                name = "Занга",
+                demoText = "ДЭДЛАЙН!!!",
+                avatar = R.drawable.ic_person,
+                date = "06.05.2021"
+            )
+        )
+        add(
+            Chats(
+                name = "Руся",
+                demoText = "ЧЕ ТАМ!!!",
+                avatar = R.drawable.ic_person,
+                date = "02.01.2022"
+            )
+        )
+        add(
+            Chats(
+                name = "ОЛЖИК",
+                demoText = "Hello everyone!!!",
+                avatar = R.drawable.ic_person,
+                date = "01.02.2023"
+            )
+        )
     }
 }
 
